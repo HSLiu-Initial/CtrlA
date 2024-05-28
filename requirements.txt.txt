@@ -1,0 +1,10 @@
+tqdm
+spacy
+scikit-learn
+jsonlines
+transformers==4.36.2
+nltk
+dataclasses
+flash-attn==2.3.6
+accelerate==0.24.0
+tokenizers==0.15.0
