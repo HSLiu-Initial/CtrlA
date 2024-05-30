@@ -118,5 +118,16 @@ Please follow the instructions provided in the [freshllms/freshqa](https://githu
 ## Citation
 If this work is helpful for you, please kindly cite it as follows:
 ```bibtex
-TBA
+@misc{liu2024ctrla,
+      title={CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control}, 
+      author={Huanshuo Liu and Hao Zhang and Zhijiang Guo and Kuicai Dong and Xiangyang Li and Yi Quan Lee and Cong Zhang and Yong Liu},
+      year={2024},
+      eprint={2405.18727},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
+
+## Contact
+
+If you have questions, feel free to send an email to huanshuo.liu[at]u.nus.edu.
