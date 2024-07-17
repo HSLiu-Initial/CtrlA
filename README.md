@@ -1,31 +1,54 @@
+<div align="center">
+    <img alt="CtrlA logo" src="./assets/logo.png" style="height: 150px;" />
+</div>
+<div align="center">
+<p align="center">
+    <a href="https://www.python.org/">
+            <img alt="Build" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?color=purple">
+    </a>
+    <a href="https://github.com/HSLiu-Initial/CtrlA/blob/main/LICENSE">
+            <img alt="License" src="https://img.shields.io/github/license/beir-cellar/beir.svg?color=green">
+    </a>
+    <a href="https://github.com/HSLiu-Initial/CtrlA">
+            <img alt="Downloads" src="https://badges.frapsoft.com/os/v2/open-source.png?v=103">
+    </a>
+    </p>
+</p>
+</div>
+
+
 # CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control
 
-The original implementation of **CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control**.
+<p align="center">
+📘 <a href="https://zhuanlan.zhihu.com/p/708644813" target="_blank">Zhihu Blog</a> • 📝 <a href="https://arxiv.org/abs/2405.18727" target="_blank"> Arxiv Paper </a><br>
+</p>
+
+The official implementation of **CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control**.
 
 ![ctrla](assets/framework.png)
 
-This work introduces an effective probe-guided adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterize LLM’s internal states and intervene in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective probes.
+CtrlA introduces an effective probe-guided adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterize LLM’s internal states and intervene in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective probes.
 
-## Installation
+## :syringe: Installation
 
 Install dependenices by running the command below.
 ```
 pip install -r requirements.txt
 ```
 
-## Datasets and model
+## :syringe: Datasets and Model
 
 The dataset used for training the Confidence and Honesty Probes, as well as for our evaluation, is available [here](https://drive.google.com/drive/folders/1DlIDkYvo1C_d5Nb8j589Jv7Hhe5Guk9T?usp=sharing). Please create a `eval_data/` directory and place all the data files within it.
 
 Please download the model file from [mistralai/Mistral-7B-Instruct-v0.1 on Hugging Face](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) and place it in the `model/` directory.
 
-## Confidence and Honesty Probe
+## :syringe: Confidence and Honesty Probe
 
 The pre-trained probes are stored in the `trained_probe/` directory.
 
 To train the probes, refer to the `train_confidence_probe.ipynb` notebook for the confidence probe, and the `train_honesty_probe.ipynb` notebook for the honesty probe.
 
-## Retriever Setup
+## :syringe: Retriever Setup
 
 All the code related to the retriever setup is in the `code/retrievers` directory. We provide two retrieval services
 as reported in our paper:
@@ -33,12 +56,12 @@ as reported in our paper:
 1. **BM25** Retrieval Service using ElasticSearch
 2. **BGE** Retrieval Service using FAISS
 
-### Downloads
+### :syringe: Downloads
 
 1. Wikipedia 2018 Snippets: `wget https://dl.fbaipublicfiles.com/dpr/wikipedia_split/psgs_w100.tsv.gz`
 2. BGE Embedding Model Weights: `https://huggingface.co/BAAI/bge-large-en-v1.5`
 
-### Retriever Dependencies
+### :syringe: Retriever Dependencies
 
 - FAISS : `https://github.com/facebookresearch/faiss` or `https://pypi.org/project/faiss/`
 - SentenceTransformers: `https://github.com/UKPLab/sentence-transformers`
@@ -46,7 +69,7 @@ as reported in our paper:
 - PyTorch
 - ElasticSearch
 
-### Quick Start to set up **BGE** Retrieval Service
+### :syringe: Quick Start to Setup **BGE** Retrieval Service
 
 ```bash
 cd code/retrievers/bge_retrieval_service  # go to the target directory
@@ -60,7 +83,7 @@ python send_req_bge_wiki.py -q <query> -k <stop_k> --use_prefix
 ```
 `--use_prefix` is optional, which appends the prefix `Represent this sentence for searching relevant passages:` in front of queries for asymmetric encoding of queries and passages
 
-### Quick Start to set up ES (Elasticsearch) Retrieval Service (**BM25**)
+### :syringe: Quick Start to Setup ES (Elasticsearch) Retrieval Service (**BM25**)
 ```bash
 cd code/retrievers/es_retrieval_service  # go to the target directory
 python es_dictionary.py  # convert passages in tsv to desired dictionary format.
@@ -74,21 +97,21 @@ python send_es_req.py -q <query> -k <stop_k>
 
 After deploying the retrieval service, please complete the corresponding retrieval functions in `code/retrieval.py`.
 
-## Evaluation
+## :syringe: Evaluation
 
 All the commands can be found in `./run.sh`
 
-### TriviaQA
+### :syringe: TriviaQA
 ```bash
 python run.py --config configs/run.json --model run_short_form --dataset triviaqa --task triviaqa --max_new_tokens 1024 --retrieve_method bge_serper --metric match --use_tvq
 ```
 
-### PopQA
+### :syringe: PopQA
 ```bash
 python run.py --config configs/run.json --model run_short_form --dataset popqa --task popqa --max_new_tokens 1024 --retrieve_method bge_serper --metric match --use_tvq --continue_gen_without_contents
 ```
 
-### ASQA
+### :syringe: ASQA
 ```bash
 python run.py --config configs/run.json --model run_long_form --dataset asqa --task asqa --max_new_tokens 130 --retrieve_method bge --use_tvq
 ```
@@ -100,7 +123,7 @@ cd ALCE
 bash download_data.sh
 ```
 
-### Bio Generation
+### :syringe: Bio Generation
 ```bash
 python run.py --config configs/run.json --model run_long_form --dataset fact --task fact --max_new_tokens 300 --retrieve_method bge_serper --use_tvq
 ```
@@ -109,13 +132,13 @@ Please follow the instructions in the [FactScore](https://github.com/shmsw25/FAc
 python -m factscore.factscorer --data_path <output_file>  --model_name retrieval+ChatGPT --cache_dir <cache_dir> --openai_key <openai_key> --verbose
 ```
 
-### FreshQA
+### :syringe: FreshQA
 ```bash
 python run.py --config configs/run.json --model run_long_form --dataset fresh --task fresh --max_new_tokens 1024 --retrieve_method serper --use_tvq
 ```
 Please follow the instructions provided in the [freshllms/freshqa](https://github.com/freshllms/freshqa) repository, which includes complete data and codes of [FreshLLMs](https://arxiv.org/abs/2310.03214), to conduct your evaluation.
 
-## Citation
+## :syringe: Citation
 If this work is helpful for you, please kindly cite it as follows:
 ```bibtex
 @misc{liu2024ctrla,
@@ -128,6 +151,6 @@ If this work is helpful for you, please kindly cite it as follows:
 }
 ```
 
-## Contact
+## :syringe: Contact
 
 If you have questions, feel free to send an email to huanshuo.liu[at]u.nus.edu.
