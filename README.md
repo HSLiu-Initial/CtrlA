@@ -17,7 +17,7 @@
 </div>
 
 
-# CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control
+# CtrlA: Adaptive RAG via Probe-Guided Control
 
 <p align="center">
 📘 <a href="https://zhuanlan.zhihu.com/p/708644813" target="_blank">Zhihu Blog</a> • 📝 <a href="https://arxiv.org/abs/2405.18727" target="_blank"> Arxiv Paper </a><br>
@@ -27,18 +27,18 @@ The official implementation of **CtrlA: Adaptive Retrieval-Augmented Generation 
 
 ![ctrla](assets/framework.png)
 
-CtrlA introduces an effective probe-guided adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterize LLM’s internal states and intervene in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective probes.
+CtrlA introduces an effective probe-guided adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterizes LLM’s internal states and intervenes in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective probes.
 
 ## :syringe: Installation
 
-Install dependenices by running the command below.
+Install dependencies by running the command below.
 ```
 pip install -r requirements.txt
 ```
 
 ## :syringe: Datasets and Model
 
-The dataset used for training the Confidence and Honesty Probes, as well as for our evaluation, is available [here](https://drive.google.com/drive/folders/1DlIDkYvo1C_d5Nb8j589Jv7Hhe5Guk9T?usp=sharing). Please create a `eval_data/` directory and place all the data files within it.
+The dataset used for training the Confidence and Honesty Probes, as well as for our evaluation, is available [here](https://drive.google.com/drive/folders/1DlIDkYvo1C_d5Nb8j589Jv7Hhe5Guk9T?usp=sharing). Please create an `eval_data/` directory and place all the data files within it.
 
 Please download the model file from [mistralai/Mistral-7B-Instruct-v0.1 on Hugging Face](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) and place it in the `model/` directory.
 
@@ -77,7 +77,7 @@ python encode_wiki_bge.py  # encode snippets into embeddings
 python bge_faiss.py  # set up bge-retrieval service
 ```
 
-The sample code to call bge-retrieval service: 
+The sample code to call the bge-retrieval service: 
 ```bash
 python send_req_bge_wiki.py -q <query> -k <stop_k> --use_prefix
 ```
@@ -90,7 +90,7 @@ python es_dictionary.py  # convert passages in tsv to desired dictionary format.
 python es_service.py  # set up Elasticsearch Retrieval Service
 ```
 
-The sample code to call es-retrieval service: 
+The sample code to call the es-retrieval service: 
 ```bash
 python send_es_req.py -q <query> -k <stop_k>
 ```
@@ -115,7 +115,7 @@ python run.py --config configs/run.json --model run_short_form --dataset popqa -
 ```bash
 python run.py --config configs/run.json --model run_long_form --dataset asqa --task asqa --max_new_tokens 130 --retrieve_method bge --use_tvq
 ```
-[ALCE/ASQA](https://github.com/princeton-nlp/ALCE) offers a thorough evaluation of long-form QA using various metrics. To conduct your initial evaluation, install the ALCE repository and download the necessary data.
+[ALCE/ASQA](https://github.com/princeton-nlp/ALCE) offers a thorough evaluation of long-form QA using various metrics. To conduct the initial evaluation, you can install the ALCE repository and download the necessary data.
 ```bash
 git clone https://github.com/princeton-nlp/ALCE.git
 python3 -m alce_env
