@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 The dataset used for training the Confidence and Honesty Probes, as well as for our evaluation, is available [here](https://drive.google.com/drive/folders/1DlIDkYvo1C_d5Nb8j589Jv7Hhe5Guk9T?usp=sharing). Please create an `eval_data/` directory and place all the data files within it.
 
-Please download the model file from [mistralai/Mistral-7B-Instruct-v0.1 on Hugging Face](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) and place it in the `model/` directory.
+Please download the model file from [mistralai/Mistral-7B-Instruct-v0.1](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) on Hugging Face and place it in the `model/` directory.
 
 ## :syringe: Confidence and Honesty Probe
 
