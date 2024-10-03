@@ -17,7 +17,7 @@
 </div>
 
 
-# CtrlA: Adaptive RAG via Probe-Guided Control
+# CtrlA: Adaptive RAG via Inherent Control
 
 <p align="center">
 📘 <a href="https://zhuanlan.zhihu.com/p/708644813" target="_blank">Zhihu Blog</a>  • 📚 <a href="https://mp.weixin.qq.com/s/rfUhvVxZKRNuqs5bm0nsvA" target="_blank"> Social Media </a>  • 📝 <a href="https://arxiv.org/abs/2405.18727" target="_blank"> Arxiv Paper </a><br>
@@ -42,11 +42,11 @@ The dataset used for training the Confidence and Honesty Probes, as well as for 
 
 Please download the model file from [mistralai/Mistral-7B-Instruct-v0.1](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) on Hugging Face and place it in the `model/` directory.
 
-## :syringe: Confidence and Honesty Probe
+## :syringe: Confidence and Honesty Feature
 
-The pre-trained probes are stored in the `trained_probe/` directory.
+The pre-trained feature are stored in the `trained_probe/` directory.
 
-To train the probes, refer to the `train_confidence_probe.ipynb` notebook for the confidence probe, and the `train_honesty_probe.ipynb` notebook for the honesty probe.
+To extract the features, refer to the `train_confidence_probe.ipynb` notebook for the confidence feature, and the `train_honesty_probe.ipynb` notebook for the honesty feature.
 
 ## :syringe: Retriever Setup
 
