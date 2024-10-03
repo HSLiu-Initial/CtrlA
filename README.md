@@ -20,14 +20,14 @@
 # CtrlA: Adaptive RAG via Probe-Guided Control
 
 <p align="center">
-📘 <a href="https://zhuanlan.zhihu.com/p/708644813" target="_blank">Zhihu Blog</a> • 📝 <a href="https://arxiv.org/abs/2405.18727" target="_blank"> Arxiv Paper </a><br>
+📘 <a href="https://zhuanlan.zhihu.com/p/708644813" target="_blank">Zhihu Blog</a>  • 📚 <a href="https://mp.weixin.qq.com/s/rfUhvVxZKRNuqs5bm0nsvA" target="_blank"> Social Media </a>  • 📝 <a href="https://arxiv.org/abs/2405.18727" target="_blank"> Arxiv Paper </a><br>
 </p>
 
-The official implementation of **CtrlA: Adaptive Retrieval-Augmented Generation via Probe-Guided Control**.
+The official implementation of **CtrlA: Adaptive Retrieval-Augmented Generation via Inherent Control**.
 
 ![ctrla](assets/framework.png)
 
-CtrlA introduces an effective probe-guided adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterizes LLM’s internal states and intervenes in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective probes.
+CtrlA introduces an effective inherent control-based adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterizes LLM’s internal states and intervenes in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective feature direction representations.
 
 ## :syringe: Installation
 
