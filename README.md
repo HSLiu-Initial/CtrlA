@@ -27,7 +27,11 @@ The official implementation of **CtrlA: Adaptive Retrieval-Augmented Generation 
 
 ![ctrla](assets/framework.png)
 
-CtrlA introduces an effective inherent control-based adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterizes LLM’s internal states and intervenes in the LLM generation from two perspectives: honesty control and confidence monitoring via simple yet effective feature direction representations.
+CtrlA introduces an effective inherent control-based adaptive RAG framework, termed CtrlA, to enhance retrieval-augmented generation for LLM, balancing its internal and external knowledge. CtrlA characterizes LLM’s internal states and intervenes in the LLM generation from two perspectives: honesty steering and confidence monitoring via simple yet effective feature direction representations.
+
+# News
+
+**Oct 7, 2024** We have updated the version of CtrlA on Arxiv (Version 2).
 
 ## :syringe: Installation
 
