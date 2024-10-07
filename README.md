@@ -31,7 +31,7 @@ CtrlA introduces an effective inherent control-based adaptive RAG framework, ter
 
 # News
 
-**Oct 7, 2024** We have updated the version of CtrlA on Arxiv (Version 2).
+**Oct 7, 2024** 🎉 We have updated the version of CtrlA on Arxiv (Version 2).
 
 ## :syringe: Installation
 
